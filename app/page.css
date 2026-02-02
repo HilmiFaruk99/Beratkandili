@@ -892,3 +892,204 @@ h1 {
     box-shadow: 0 8px 20px rgba(255, 204, 102, 0.35);
   }
 }
+/* Yâsîn Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 200ms ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.yasinModal {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius2);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(var(--blur));
+  animation: slideUp 300ms ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--stroke);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.modalTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.pageCounter {
+  font-size: 0.9rem;
+  color: var(--muted);
+  min-width: 60px;
+  text-align: right;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 200ms ease;
+}
+
+.closeBtn:hover {
+  background: var(--card2);
+  color: var(--text);
+}
+
+.modalContent {
+  flex: 1;
+  overflow: hidden;
+  padding: 24px;
+  position: relative;
+  direction: rtl;
+  text-align: center;
+  animation: contentFadeIn 300ms ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent.slide-left {
+  animation: slideContentLeft 300ms ease-out;
+}
+
+.modalContent.slide-right {
+  animation: slideContentRight 300ms ease-out;
+}
+
+@keyframes slideContentLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideContentRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+}
+
+.yasinText {
+  font-size: 1.4rem;
+  line-height: 2.2;
+  color: var(--text);
+  font-family: "Arial", sans-serif;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  animation: textSlideIn 300ms ease-out 100ms backwards;
+  max-height: 100%;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+@keyframes textSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalFooter {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid var(--stroke);
+  background: var(--card2);
+}
+
+.modalFooter .btn {
+  flex: 1;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+}
+
+/* Scrollbar styling for modal content */
+.yasinText::-webkit-scrollbar {
+  width: 6px;
+}
+
+.yasinText::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.yasinText::-webkit-scrollbar-thumb {
+  background: var(--muted2);
+  border-radius: 3px;
+}
+
+.yasinText::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
