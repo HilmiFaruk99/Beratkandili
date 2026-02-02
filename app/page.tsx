@@ -8,9 +8,9 @@ export default function Home() {
   const [completedBoxes, setCompletedBoxes] = useState<number[]>([]);
   const [tesbihCounts, setTesbihCounts] = useState<Record<string, number>>({});
   const [tesbihIndex, setTesbihIndex] = useState(0);
-  const [currentTab, setCurrentTab] = useState<'namaz' | 'tesbih'>('namaz');
-  const [toast, setToast] = useState({ message: '', show: false });
-  const [celebration, setCelebration] = useState({ message: '', show: false });
+  const [currentTab, setCurrentTab] = useState<"namaz" | "tesbih">("namaz");
+  const [toast, setToast] = useState({ message: "", show: false });
+  const [celebration, setCelebration] = useState({ message: "", show: false });
   const [openCards, setOpenCards] = useState<Record<string, boolean>>({});
 
   const LS_PROGRESS = "berat_progress_v2";
